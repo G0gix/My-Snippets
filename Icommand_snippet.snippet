@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MVVMCommand</Title>
+			<Shortcut>mvvmcomm</Shortcut>
+			<Description>Фрагмент кода для инструкции if</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>region</ID>
+					<ToolTip></ToolTip>
+					<Default>MyIcommand</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+		<![CDATA[
+				#region $region$
+					public ICommand $region$ { get; }
+					private bool Can$region$Execute(object p) => true;
+					private void On$region$Execute(object p)
+					{
+					   $end$
+					}
+					
+					$region$ = new LamdaCommand(On$region$Execute, Can$region$Execute);
+				#endregion
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
