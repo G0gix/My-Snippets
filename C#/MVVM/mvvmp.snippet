@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MVVM</Title>
+			<Shortcut>mvvmprop</Shortcut>
+			<Description>Фрагмент кода для инструкции if</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>region</ID>
+					<ToolTip>Выражение для вычисления</ToolTip>
+					<Default>MyProp</Default>
+				</Literal>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Var type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
+					<ID>privateVar</ID>
+					<ToolTip>privateVar name</ToolTip>
+					<Default>_myProp</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+		<![CDATA[
+				#region $type$ - $region$ $end$
+				private $type$ $privateVar$; 
+
+				public $type$ $region$
+				{
+				    get { return $privateVar$; }
+				    set 
+					{
+						if(value != null)
+						{
+							$privateVar$ = value;
+							OnPropertyChanged("$region$");
+						}
+					}
+				}
+				#endregion
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
