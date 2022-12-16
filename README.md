@@ -1,5 +1,5 @@
-# My-VS-Snippets
-Мои сниппеты для Visual Studio 
+# My-Snippets
+Мои сниппеты для проектов
 
 Путь до папки 
 VC#\Snippets\1049\Visual C#
