@@ -2,9 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>MVVM_Prop_v1</Title>
+			<Title>MVVM_Prop_v2</Title>
 			<Shortcut>mvvmprop</Shortcut>
-			<Description>Фрагмент кода для инструкции if</Description>
+			<Description>Фрагмент кода для свойства MVVM</Description>
 			<Author>Microsoft Corporation</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -32,19 +32,18 @@
 			<Code Language="csharp">
 		<![CDATA[
 				#region $type$ - $region$ $end$
+				/// <summary>
+				/// $end$
+				/// </summary>
 				private $type$ $privateVar$; 
 
+				/// <summary>
+				/// $end$
+				/// </summary>
 				public $type$ $region$
 				{
 				    get { return $privateVar$; }
-				    set 
-					{
-						if(value != null)
-						{
-							$privateVar$ = value;
-							OnPropertyChanged("$region$");
-						}
-					}
+				    set => Set(ref $privateVar$, value); 
 				}
 				#endregion
 			]]>
